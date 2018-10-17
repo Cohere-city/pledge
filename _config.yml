@@ -1,10 +1,10 @@
 # Site settings
-title: Minimal Staticman v3 Demo
+title: Cohere Pledge
 subtitle: A barebone GitHub Pages with static comments
-email: your-email@domain.com
+email: interactive@cohere.city
 description: Test
 baseurl: ""
-url: "https://vincenttam.github.io/TestStaticmanLab/"
+url: "https://cohere-city.github.io/pledge/"
 locale: en
 github_username:  VincentTam
 
@@ -12,5 +12,5 @@ github_username:  VincentTam
 markdown: kramdown
 
 staticman:
-  api: "https://staticman3.herokuapp.com/v3/entry/github/vincenttam/TestStaticmanLab/master/comments"
+  api: "https://staticman3.herokuapp.com/v3/entry/github/cohere-city/pledge/master/comments"
   path: "_data/comments/test-slug"
