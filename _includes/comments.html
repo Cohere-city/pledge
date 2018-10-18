@@ -1,14 +1,23 @@
-<div class="comments">
-  <h3>Comments</h3>
-  {% assign comments = site.data.comments.test-slug | sort %}
-  {% for comment in comments reversed %}
-    {% assign commentData = comment[1] %}
-    <article class="comment">
-      <h4 class="comment-name">{{ commentData.name }}</h4>
-      <p class="comment-time">{{ commentData.date | date: "%b %d, %Y %H:%M:%S" }}</p>
-      <div class="comment-msg">
-        {{ commentData.message | markdownify }}
-      </div>
-    </article>
-  {% endfor %}
+<div class="container">
+  <div class="sig content">
+    <h2>I pledge:</h2>
+
+    {% assign comments = site.data.comments.test-slug | sort %}
+    {% for comment in comments %}
+      {% assign commentData = comment[1] %}
+      {% assign mod3 = forloop.index | modulo: 4 %}
+      <article class="sig-item">
+        {% if commentData.link %}
+        <a href="{{ commentData.url }}" target="_blank">
+        {% endif %}
+          {% if mod3 == 0 %}<h1 class="comment-name sig-print">{{ commentData.name }}</h1>{% endif %}
+          {% if mod3 == 1 %}<h1 class="comment-name sig-script">{{ commentData.name }}</h1>{% endif %}
+          {% if mod3 == 2 %}<h1 class="comment-name sig-child">{{ commentData.name }}</h1>{% endif %}
+          {% if mod3 == 3 %}<h1 class="comment-name sig-classic">{{ commentData.name }}</h1>{% endif %}
+        {% if commentData.link %}
+        </a>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
 </div>

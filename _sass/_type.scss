@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'hk-grotesk';
+    src: 
+        url('hkgrotesk-bold-webfont.woff'),
+        url('hkgrotesk-bold-webfont.woff2'),
+        url('hkgrotesk-bold-webfont.ttf');
+}
+
+$site-font: 'hk-grotesk';
+
+body {
+    font-family: $site-font;
+    font-size: 16px;
+}
+
+h1 {
+    margin: 0 0 $spacing 0;
+    font-size: 42px;
+    line-height: 1.2em;
+    @include query ($md-width) {
+        font-size: 64px;
+    }
+    @include query ($md-width) {
+        font-size: 128px;
+    }
+}
+
+h2 {
+    font-size: 64px;
+    line-height: 1.2em;
+}
+
+p {
+    margin: 1.25em 0;
+    line-height: 1.625em;
+}
+
+// Signatures
+.sig-child {
+    font-family: 'ff-providence-sans-web-pro', sans-serif;
+}
+
+.sig-print {
+    font-family: 'reenie-beanie', sans-serif;
+}
+
+.sig-classic {
+    font-family: 'p22-cezanne-pro', sans-serif;
+}
+
+.sig-script {
+    font-family: 'rollerscript-rough', sans-serif;
+}

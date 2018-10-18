@@ -1,0 +1,86 @@
+// Transition
+.sign {
+    transition: all 600ms ease;
+}
+
+.sign.closed {
+    transform: translateX(-100%);
+}
+
+nav {
+    position: absolute;
+    top: $spacing/2;
+    right: $spacing;
+    padding: 0;
+}
+
+.sign {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: red;
+    z-index: 1000;
+
+    @include query ($md-width) {
+        flex-direction: row;
+    }
+
+    > div {
+        min-height: 50vh;
+        padding: $spacing*2 $spacing;
+
+        @include query ($md-width) {
+            width: 50%;
+            height: 100vh;
+            overflow: scroll;
+        }
+    }
+
+    &-web {
+        background-color: $black;
+        color: $white;
+    }
+
+    &-print {
+        background-color: $white;
+
+        h2 a {
+            color: $black;
+            text-decoration: none;
+
+            span {
+                color: $grey;
+                font-size: 0.675em;
+            }
+        }
+    }
+}
+
+form {
+    margin-top: 15vh;
+
+    input {
+        display: block;
+        width: 100%;
+        padding: $spacing / 2;
+        background-color: lighten($black, 10%);
+        border: none;
+        box-sizing: border-box;
+        font-family: $site-font;
+    }
+    input[type=text] {
+        margin: $spacing 0;
+        padding: $spacing $spacing/2 $spacing/2 $spacing/2;
+        font-size: 64px;
+        border-bottom: 2px solid $grey;
+    }
+    input[type=submit] {
+        width: auto;
+        margin: $spacing 0;
+        background-color: $grey;
+    }
+}

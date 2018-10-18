@@ -1,0 +1,29 @@
+---
+---
+@charset "utf-8";
+
+$white: #fefefe;
+$black: #2b2b2b;
+$grey: lighten($black, 75%);
+
+$sm-width: 460px;
+$md-width: 768px;
+$lg-width: 920px;
+
+$spacing: 30px;
+
+@mixin query($device) {
+    @media screen and (min-width: $device) {
+        @content;
+    }
+}
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "reset",
+        "type",
+        "general",
+        "manifesto",
+        "signatures",
+        "sign"
+;

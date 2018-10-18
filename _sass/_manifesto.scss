@@ -1,0 +1,14 @@
+.manifesto {
+    &-quote {
+        margin: $spacing*2;
+        font-size: 1.25em;
+        p {
+            display: inline;
+            padding-bottom: 3px;
+            border-bottom: solid 1px #000000;
+        }
+    }
+    &-meta {
+        font-size: 0.75em;
+    }
+}

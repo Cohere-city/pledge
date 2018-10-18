@@ -1,0 +1,9 @@
+<form method="POST" action="{{ site.staticman.api }}">
+        <input name="options[redirect]" type="hidden" value="{{ site.url }}">
+        <input name="options[slug]" type="hidden" value="test-slug">
+        
+        <input name="fields[name]" type="text">
+        <input name="fields[url]" type="url">
+
+        <input type="submit" value="Submit">
+    </form>

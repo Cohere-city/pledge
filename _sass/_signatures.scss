@@ -1,0 +1,25 @@
+.sig {
+    position: relative;
+    
+    @include query($lg-width) {
+        position: absolute;
+        top: 100vh;
+    }
+
+    &-item {
+
+        &:hover {
+            opacity: 1;
+        }
+
+        a {
+            text-decoration: none;
+            color: $grey;
+            transition: color 50ms ease-out;
+
+            &:hover {
+                color: $black;
+            }
+        }
+    }
+}

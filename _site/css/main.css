@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'hk-grotesk';
+  src: url("hkgrotesk-bold-webfont.woff"), url("hkgrotesk-bold-webfont.woff2"), url("hkgrotesk-bold-webfont.ttf"); }
+body {
+  font-family: "hk-grotesk";
+  font-size: 16px; }
+
+h1 {
+  margin: 0 0 30px 0;
+  font-size: 42px;
+  line-height: 1.2em; }
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: 64px; } }
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: 128px; } }
+
+h2 {
+  font-size: 64px;
+  line-height: 1.2em; }
+
+p {
+  margin: 1.25em 0;
+  line-height: 1.625em; }
+
+.sig-child {
+  font-family: 'ff-providence-sans-web-pro', sans-serif; }
+
+.sig-print {
+  font-family: 'reenie-beanie', sans-serif; }
+
+.sig-classic {
+  font-family: 'p22-cezanne-pro', sans-serif; }
+
+.sig-script {
+  font-family: 'rollerscript-rough', sans-serif; }
+
+.container .content {
+  margin: 3rem auto;
+  padding: 0 30px; }
+  .container .content.sm-width {
+    max-width: 460px; }
+  .container .content.md-width {
+    max-width: 768px; }
+  .container .content.lg-width {
+    max-width: 920px; }
+
+.header {
+  padding: 15px 0 0 0;
+  text-align: right; }
+  .header-link {
+    display: inline-block;
+    padding: 0px 30px;
+    color: #2b2b2b;
+    text-decoration: none; }
+    .header-link a {
+      color: #2b2b2b;
+      text-decoration: none; }
+
+.manifesto-quote {
+  margin: 60px;
+  font-size: 1.25em; }
+  .manifesto-quote p {
+    display: inline;
+    padding-bottom: 3px;
+    border-bottom: solid 1px #000000; }
+.manifesto-meta {
+  font-size: 0.75em; }
+
+.sig {
+  position: relative; }
+  @media screen and (min-width: 920px) {
+    .sig {
+      position: absolute;
+      top: 100vh; } }
+  .sig-item:hover {
+    opacity: 1; }
+  .sig-item a {
+    text-decoration: none;
+    color: #eaeaea;
+    transition: color 50ms ease-out; }
+    .sig-item a:hover {
+      color: #2b2b2b; }
+
+.sign {
+  transition: all 600ms ease; }
+
+.sign.closed {
+  transform: translateX(-100%); }
+
+nav {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  padding: 0; }
+
+.sign {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: red;
+  z-index: 1000; }
+  @media screen and (min-width: 768px) {
+    .sign {
+      flex-direction: row; } }
+  .sign > div {
+    min-height: 50vh;
+    padding: 60px 30px; }
+    @media screen and (min-width: 768px) {
+      .sign > div {
+        width: 50%;
+        height: 100vh;
+        overflow: scroll; } }
+  .sign-web {
+    background-color: #2b2b2b;
+    color: #fefefe; }
+  .sign-print {
+    background-color: #fefefe; }
+    .sign-print h2 a {
+      color: #2b2b2b;
+      text-decoration: none; }
+      .sign-print h2 a span {
+        color: #eaeaea;
+        font-size: 0.675em; }
+
+form {
+  margin-top: 15vh; }
+  form input {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #454545;
+    border: none;
+    box-sizing: border-box;
+    font-family: "hk-grotesk"; }
+  form input[type=text] {
+    margin: 30px 0;
+    padding: 30px 15px 15px 15px;
+    font-size: 64px;
+    border-bottom: 2px solid #eaeaea; }
+  form input[type=submit] {
+    width: auto;
+    margin: 30px 0;
+    background-color: #eaeaea; }
