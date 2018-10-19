@@ -6,7 +6,7 @@ description: Test
 baseurl: ""
 url: "https://cohere-city.github.io/pledge/"
 locale: en
-github_username:  VincentTam
+github_username:  Cohere-city
 
 # Build settings
 markdown: kramdown
