@@ -82,20 +82,23 @@ nav {
     }
 }
 
+
+// FORM
 form {
     margin-top: 15vh;
 
     input {
         display: block;
         width: 100%;
+        margin: $spacing 0;
         padding: $spacing / 2;
         background-color: lighten($black, 10%);
         border: none;
         box-sizing: border-box;
         font-family: $site-font;
+        color: $white;
     }
     input[type=text] {
-        margin: $spacing 0;
         padding: $spacing $spacing/2 $spacing/2 $spacing/2;
         font-size: 64px;
         border-bottom: 2px solid $grey;
@@ -103,6 +106,43 @@ form {
     input[type=submit] {
         width: auto;
         margin: $spacing 0;
+        padding: $spacing/2 $spacing;
         background-color: $grey;
+        color: $black;
+        font-size: 1.25em;
     }
+}
+
+label{
+    display:block;
+    overflow:auto;
+    position:relative;
+  }
+input ~ span{
+    transition:
+        top 600ms $ease,
+        font-size 600ms $ease;
+   position:absolute;
+   top:1em;
+   padding: 0 $spacing/2;
+}
+input[type=text] ~ span{
+    font-size: 64px;
+}
+input[type=url] ~ span{
+    top: 2.66em;
+}
+
+input:focus ~ span, input:valid ~ span{
+    top:0px;
+    font-size: 16px;
+}
+
+input[type=url]:invalid ~ span {
+    color: orange;
+}
+
+input[type=url]:valid ~ span {
+    top: 0em;
+    color: white;
 }

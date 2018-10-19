@@ -153,17 +153,49 @@ form {
   form input {
     display: block;
     width: 100%;
+    margin: 30px 0;
     padding: 15px;
     background-color: #454545;
     border: none;
     box-sizing: border-box;
-    font-family: "hk-grotesk"; }
+    font-family: "hk-grotesk";
+    color: #fefefe; }
   form input[type=text] {
-    margin: 30px 0;
     padding: 30px 15px 15px 15px;
     font-size: 64px;
     border-bottom: 2px solid #eaeaea; }
   form input[type=submit] {
     width: auto;
     margin: 30px 0;
-    background-color: #eaeaea; }
+    padding: 15px 30px;
+    background-color: #eaeaea;
+    color: #2b2b2b;
+    font-size: 1.25em; }
+
+label {
+  display: block;
+  overflow: auto;
+  position: relative; }
+
+input ~ span {
+  transition: top 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86), font-size 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  position: absolute;
+  top: 1em;
+  padding: 0 15px; }
+
+input[type=text] ~ span {
+  font-size: 64px; }
+
+input[type=url] ~ span {
+  top: 2.66em; }
+
+input:focus ~ span, input:valid ~ span {
+  top: 0px;
+  font-size: 16px; }
+
+input[type=url]:invalid ~ span {
+  color: orange; }
+
+input[type=url]:valid ~ span {
+  top: 0em;
+  color: white; }
