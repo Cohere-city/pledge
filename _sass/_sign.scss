@@ -1,17 +1,40 @@
 // Transition
 .sign {
-    transition: all 600ms ease;
+    &-web {
+        transition: all 600ms $ease;
+    }
+    &-print {
+        transition: all 600ms $ease;
+    }
+    nav {
+        transition: all 100ms 500ms $ease;
+    }
 }
 
 .sign.closed {
-    transform: translateX(-100%);
+    visibility: hidden;
+
+    .sign-web {
+        visibility: hidden;
+        opacity: 0.75;
+        transform: translateY(100%) scale(1, 0.8);
+    }
+    .sign-print {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-$spacing);
+    }
+    nav {
+        opacity: 0;
+        transition: all 100ms $ease;
+    }
 }
 
 nav {
     position: absolute;
-    top: $spacing/2;
+    top: $spacing;
     right: $spacing;
-    padding: 0;
+    padding: 8px $spacing;
 }
 
 .sign {
@@ -22,7 +45,6 @@ nav {
     min-height: 100vh;
     top: 0;
     left: 0;
-    background-color: red;
     z-index: 1000;
 
     @include query ($md-width) {

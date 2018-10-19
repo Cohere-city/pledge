@@ -18,6 +18,8 @@ $spacing: 30px;
     }
 }
 
+$ease: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "reset",

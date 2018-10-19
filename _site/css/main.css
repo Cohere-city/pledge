@@ -89,17 +89,32 @@ p {
     .sig-item a:hover {
       color: #2b2b2b; }
 
-.sign {
-  transition: all 600ms ease; }
+.sign-web {
+  transition: all 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+.sign-print {
+  transition: all 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+.sign nav {
+  transition: all 100ms 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86); }
 
 .sign.closed {
-  transform: translateX(-100%); }
+  visibility: hidden; }
+  .sign.closed .sign-web {
+    visibility: hidden;
+    opacity: 0.75;
+    transform: translateY(100%) scale(1, 0.8); }
+  .sign.closed .sign-print {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-30px); }
+  .sign.closed nav {
+    opacity: 0;
+    transition: all 100ms cubic-bezier(0.785, 0.135, 0.15, 0.86); }
 
 nav {
   position: absolute;
-  top: 15px;
+  top: 30px;
   right: 30px;
-  padding: 0; }
+  padding: 8px 30px; }
 
 .sign {
   position: fixed;
@@ -109,7 +124,6 @@ nav {
   min-height: 100vh;
   top: 0;
   left: 0;
-  background-color: red;
   z-index: 1000; }
   @media screen and (min-width: 768px) {
     .sign {
