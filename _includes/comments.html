@@ -8,7 +8,7 @@
       {% assign mod3 = forloop.index | modulo: 4 %}
       <article class="sig-item">
         {% if commentData.link %}
-        <a href="{{ commentData.url }}" target="_blank">
+        <a href="{{ commentData.link }}" target="_blank">
         {% endif %}
           {% if mod3 == 0 %}<h1 class="comment-name sig-print">{{ commentData.name }}</h1>{% endif %}
           {% if mod3 == 1 %}<h1 class="comment-name sig-script">{{ commentData.name }}</h1>{% endif %}
