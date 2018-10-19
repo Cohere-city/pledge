@@ -58,6 +58,11 @@ p {
       color: #2b2b2b;
       text-decoration: none; }
 
+.manifesto_wrap {
+  position: relative;
+  pointer-events: none;
+  z-index: 10; }
+
 .manifesto-quote {
   margin: 60px;
   font-size: 1.25em; }
@@ -69,7 +74,8 @@ p {
   font-size: 0.75em; }
 
 .sig {
-  position: relative; }
+  position: relative;
+  top: 400px; }
   @media screen and (min-width: 920px) {
     .sig {
       position: absolute;

@@ -1,5 +1,6 @@
 .sig {
     position: relative;
+    top: 400px;
     
     @include query($lg-width) {
         position: absolute;

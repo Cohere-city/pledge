@@ -1,3 +1,9 @@
+.manifesto_wrap {
+    position: relative;
+    pointer-events: none;
+    z-index: 10;
+}
+
 .manifesto {
     &-quote {
         margin: $spacing*2;
