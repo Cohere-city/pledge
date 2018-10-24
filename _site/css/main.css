@@ -156,6 +156,9 @@ small {
   border-bottom: 3px solid #161616;
   cursor: pointer; }
 
+html.sr .load-hidden {
+  visibility: hidden; }
+
 .manifesto_wrap {
   position: relative;
   pointer-events: none;
