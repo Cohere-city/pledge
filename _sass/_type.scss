@@ -19,6 +19,7 @@ $site-font: 'Maison Neue', sans-serif;
 body {
     font-family: $site-font;
     font-size: 21px;
+    font-variant-ligatures: no-common-ligatures;
 }
 
 h1 {

@@ -44,6 +44,10 @@ ScrollReveal().reveal('.comment-name', {
 
 })
 
+ScrollReveal().reveal('.manifesto-logo', {
+    delay: 200,
+})
+
 ScrollReveal().reveal('.manifesto-body h1', {
     delay: 600,
 })

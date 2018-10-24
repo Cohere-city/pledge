@@ -1,6 +1,6 @@
 .container {
     .content {
-        margin: 3rem auto;
+        margin: $spacing*2 auto;
         padding: 0 30px;
 
         &.sm-width {
@@ -17,16 +17,20 @@
 
 // HEADER
 .header {
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    margin: $spacing*2 0 0 0;
     
     &-link {
-        display: inline-block;
         color: $black;
         text-decoration: none;
 
         a {
             color: $black;
             text-decoration: none;
+        }
+        .logo {
+            width: 100px;
         }
     }
 }
@@ -39,7 +43,7 @@
     }
 }
 
-#openSign, #closeSign {
+#closeSign {
     position: absolute;
     top: $spacing*2;
     right: $spacing;

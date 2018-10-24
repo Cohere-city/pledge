@@ -55,7 +55,8 @@ table {
   font-style: normal; }
 body {
   font-family: "Maison Neue", sans-serif;
-  font-size: 21px; }
+  font-size: 21px;
+  font-variant-ligatures: no-common-ligatures; }
 
 h1 {
   margin: 0 0 30px 0;
@@ -106,7 +107,7 @@ small {
   font-family: 'rollerscript-rough', sans-serif; }
 
 .container .content {
-  margin: 3rem auto;
+  margin: 60px auto;
   padding: 0 30px; }
   .container .content.sm-width {
     max-width: 460px; }
@@ -116,14 +117,17 @@ small {
     max-width: 920px; }
 
 .header {
-  text-align: right; }
+  display: flex;
+  justify-content: space-between;
+  margin: 60px 0 0 0; }
   .header-link {
-    display: inline-block;
     color: #2b2b2b;
     text-decoration: none; }
     .header-link a {
       color: #2b2b2b;
       text-decoration: none; }
+    .header-link .logo {
+      width: 100px; }
 
 #closeSign {
   color: #fefefe; }
@@ -131,7 +135,7 @@ small {
     #closeSign {
       color: #2b2b2b; } }
 
-#openSign, #closeSign {
+#closeSign {
   position: absolute;
   top: 60px;
   right: 30px;
