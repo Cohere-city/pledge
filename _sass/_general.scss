@@ -60,3 +60,8 @@
     border-bottom: 3px solid $black;
     cursor: pointer;
 }
+
+// Scrollreveal utility
+html.sr .load-hidden {
+    visibility: hidden;
+}
