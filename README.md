@@ -2,7 +2,7 @@
 
 # Design Manifesto
 
-![alt text](https://imgur.com/a/4V59UwA "Cohere pledge print out")
+![alt text](https://i.imgur.com/AF00Ia9.jpg "Cohere pledge print out")
 
 ### First Things First
 
