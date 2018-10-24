@@ -1,9 +1,9 @@
 @font-face {
-    font-family: 'hk-grotesk';
-    src: 
-        url('hkgrotesk-bold-webfont.woff'),
-        url('hkgrotesk-bold-webfont.woff2'),
-        url('hkgrotesk-bold-webfont.ttf');
+    font-family: 'Maison Neue';
+    src: url("MaisonNeueWEB-Book.woff2") format("woff2"),
+         url("MaisonNeueWEB-Book.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
@@ -18,20 +18,24 @@ $site-font: 'Maison Neue', sans-serif;
 
 body {
     font-family: $site-font;
-    font-size: 21px;
+    font-size: calc(14px + 1.5vw);
     font-variant-ligatures: no-common-ligatures;
 }
 
 h1 {
     margin: 0 0 $spacing 0;
-    font-size: 4em;
-    line-height: 1.25em;
+    font-size: 5.125em;
+    font-weight: 700;
+    line-height: 1.125em;
     @include query ($sm-width) {
-        font-size: 6em;
-        line-height: 1.125em;
+        font-size: 5.75em;
+        line-height: 1.25em;
     }
     @include query ($md-width) {
-        font-size: 8em;
+        font-size: 5.625em;
+    }
+    @include query ($lg-width) {
+        font-size: 6em;
     }
 }
 
@@ -55,10 +59,11 @@ h4 {
 
 p {
     margin: 1.25em 0;
-    line-height: 1.875em;
+    font-weight: 400;
+    line-height: 1.625em;
 
     @include query ($md-width) {
-        line-height: 2.125em;
+        line-height: 1.5em;
     }
 }
 
@@ -68,7 +73,7 @@ small {
 
 // Signatures
 .sig-child {
-    font-family: 'ff-providence-sans-web-pro', sans-serif;
+    font-family: 'neonoir', sans-serif;;
 }
 
 .sig-print {
@@ -76,9 +81,9 @@ small {
 }
 
 .sig-classic {
-    font-family: 'p22-cezanne-pro', sans-serif;
+    font-family: 'professor', sans-serif;;
 }
 
 .sig-script {
-    font-family: 'rollerscript-rough', sans-serif;
+    font-family: 'rollerscript-smooth', sans-serif;
 }

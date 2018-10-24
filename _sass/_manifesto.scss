@@ -6,12 +6,16 @@
 
 .manifesto {
     &-quote {
-        margin: $spacing*2;
-        font-size: 1.25em;
+        max-width: $sm-width;
+        margin: $spacing*2 auto $spacing*4 auto;
+        padding: 0 $spacing*2;
+
         p {
             display: inline;
             padding-bottom: 3px;
             border-bottom: solid 1px #000000;
+            font-size: 1.25em;
+            font-weight: 700;
         }
     }
     &-meta {
