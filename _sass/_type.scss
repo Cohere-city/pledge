@@ -6,33 +6,59 @@
         url('hkgrotesk-bold-webfont.ttf');
 }
 
-$site-font: 'hk-grotesk';
+@font-face {
+    font-family: 'Maison Neue';
+    src: url("MaisonNeueWEB-Bold.woff2") format("woff2"),
+         url("MaisonNeueWEB-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+$site-font: 'Maison Neue', sans-serif;
 
 body {
     font-family: $site-font;
-    font-size: 16px;
+    font-size: 21px;
 }
 
 h1 {
     margin: 0 0 $spacing 0;
-    font-size: 42px;
-    line-height: 1.2em;
-    @include query ($md-width) {
-        font-size: 64px;
+    font-size: 4em;
+    line-height: 1.25em;
+    @include query ($sm-width) {
+        font-size: 6em;
+        line-height: 1.125em;
     }
     @include query ($md-width) {
-        font-size: 128px;
+        font-size: 8em;
     }
 }
 
 h2 {
-    font-size: 64px;
-    line-height: 1.2em;
+    font-size: 1em;
+}
+
+h3 {
+    font-size: 1.625em;
+    margin: 0 0 $spacing/2 0;
+
+    @include query ($md-width) {
+        margin: 0 0 $spacing 0;
+        font-size: 4em;
+    }
+}
+
+h4 {
+    font-size: 2.125em;
 }
 
 p {
     margin: 1.25em 0;
-    line-height: 1.625em;
+    line-height: 1.875em;
+
+    @include query ($md-width) {
+        line-height: 2.125em;
+    }
 }
 
 // Signatures

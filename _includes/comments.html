@@ -10,10 +10,10 @@
         {% if commentData.link %}
         <a href="{{ commentData.link }}" target="_blank">
         {% endif %}
-          {% if mod3 == 0 %}<h1 class="comment-name sig-print">{{ commentData.name }}</h1>{% endif %}
-          {% if mod3 == 1 %}<h1 class="comment-name sig-script">{{ commentData.name }}</h1>{% endif %}
-          {% if mod3 == 2 %}<h1 class="comment-name sig-child">{{ commentData.name }}</h1>{% endif %}
-          {% if mod3 == 3 %}<h1 class="comment-name sig-classic">{{ commentData.name }}</h1>{% endif %}
+          {% if mod3 == 0 %}<h3 class="comment-name sig-print">{{ commentData.name }}</h3>{% endif %}
+          {% if mod3 == 1 %}<h3 class="comment-name sig-script">{{ commentData.name }}</h3>{% endif %}
+          {% if mod3 == 2 %}<h3 class="comment-name sig-child">{{ commentData.name }}</h3>{% endif %}
+          {% if mod3 == 3 %}<h3 class="comment-name sig-classic">{{ commentData.name }}</h3>{% endif %}
         {% if commentData.link %}
         </a>
         {% endif %}

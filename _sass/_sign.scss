@@ -22,7 +22,7 @@
     .sign-print {
         visibility: hidden;
         opacity: 0;
-        transform: translateY(-$spacing);
+        transform: translateY(-$spacing/2);
     }
     nav {
         opacity: 0;
@@ -30,21 +30,15 @@
     }
 }
 
-nav {
-    position: absolute;
-    top: $spacing;
-    right: $spacing;
-    padding: 8px $spacing;
-}
-
 .sign {
     position: fixed;
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     top: 0;
     left: 0;
+    overflow: scroll;
     z-index: 1000;
 
     @include query ($md-width) {
@@ -52,13 +46,16 @@ nav {
     }
 
     > div {
-        min-height: 50vh;
         padding: $spacing*2 $spacing;
 
         @include query ($md-width) {
             width: 50%;
             height: 100vh;
             overflow: scroll;
+        }
+
+        h2 {
+            margin-bottom: 6rem;
         }
     }
 
@@ -70,13 +67,16 @@ nav {
     &-print {
         background-color: $white;
 
-        h2 a {
-            color: $black;
-            text-decoration: none;
+        h4 {
+            margin: $spacing*2 0;
+            a {
+                color: $black;
+                text-decoration: none;
 
-            span {
-                color: $grey;
-                font-size: 0.675em;
+                span {
+                    color: $grey;
+                    font-size: 0.675em;
+                }
             }
         }
     }
@@ -85,12 +85,11 @@ nav {
 
 // FORM
 form {
-    margin-top: 15vh;
 
     input {
         display: block;
         width: 100%;
-        margin: $spacing 0;
+        margin: $spacing 0 0 0;
         padding: $spacing / 2;
         background-color: lighten($black, 10%);
         border: none;
@@ -99,17 +98,31 @@ form {
         color: $white;
     }
     input[type=text] {
-        padding: $spacing $spacing/2 $spacing/2 $spacing/2;
-        font-size: 64px;
+        font-size: 1em;
         border-bottom: 2px solid $grey;
+
+        @include query($md-width) {
+            padding: $spacing $spacing/2 $spacing/2 $spacing/2;
+            font-size: 6rem;
+        }
+    }
+    input[type=url] {
+        margin: $spacing 0;
+
+        @include query($md-width) {
+            margin: $spacing * 1.5 0;
+        }
     }
     input[type=submit] {
         width: auto;
-        margin: $spacing 0;
         padding: $spacing/2 $spacing;
         background-color: $grey;
         color: $black;
         font-size: 1.25em;
+
+        @include query($md-width) {
+            margin: $spacing 0;
+        }
     }
 }
 
@@ -123,19 +136,30 @@ input ~ span{
         top 600ms $ease,
         font-size 600ms $ease;
    position:absolute;
-   top:1em;
+   top:1.66em;
    padding: 0 $spacing/2;
 }
 input[type=text] ~ span{
-    font-size: 64px;
+    top: 2.125em;
+    font-size: 1em;
+
+    @include query($md-width) {
+        top: 0.625em;
+        font-size: 6rem;
+    }
 }
 input[type=url] ~ span{
-    top: 2.66em;
+    @include query($md-width) {
+        top: 2.5em;
+    }
 }
 
 input:focus ~ span, input:valid ~ span{
-    top:0px;
+    top:0em;
     font-size: 16px;
+}
+input[type=url]:focus ~ span, input[type=url]:valid ~ span{
+    top:1em;
 }
 
 input[type=url]:invalid ~ span {

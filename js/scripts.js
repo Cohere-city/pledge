@@ -36,3 +36,30 @@ function scrollLoop() {
 
     requestAnimationFrame(scrollLoop)
 }
+
+// SCROLL ANIMATIONS
+
+ScrollReveal().reveal('.comment-name', {
+    interval: 100,
+
+})
+
+ScrollReveal().reveal('.manifesto-body h1', {
+    delay: 600,
+})
+
+ScrollReveal().reveal('.manifesto-body p', {
+    delay: 300,
+    distance: '30px',
+    duration: 800
+})
+
+ScrollReveal().reveal('.manifesto-quote', {
+    delay: 1000,
+    distance: '60px'
+})
+
+ScrollReveal().reveal('.manifesto-meta', {
+    delay: 600,
+    duration: 1000
+})

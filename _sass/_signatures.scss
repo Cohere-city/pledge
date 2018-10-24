@@ -1,12 +1,22 @@
 .sig {
     position: relative;
-    top: 400px;
+    top: 700px;
+
+    @include query($md-width) {
+        top: 600px;
+    }
     
     @include query($lg-width) {
         position: absolute;
         top: 100vh;
     }
 
+    h2 {
+        display: inline-block;
+        margin-bottom: $spacing*2;
+        border-bottom: 3px solid $black;
+        line-height: 2em;
+    }
     &-item {
 
         &:hover {
