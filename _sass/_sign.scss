@@ -167,6 +167,6 @@ input[type=url]:invalid ~ span {
 }
 
 input[type=url]:valid ~ span {
-    top: 0em;
+    top: 1em;
     color: white;
 }
