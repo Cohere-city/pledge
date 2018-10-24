@@ -1,74 +1,38 @@
-# Test Staticman Lab
-_Minimal_ GitHub static site powered by [Jekyll](https://jekyllrb.com),
-served by @staticmanlab running on [Staticman](https://staticman.net).
 
-+ demonstrate how [Staticman v3](https://github.com/eduardoboucas/staticman/pull/219) works with Jekyll.
-+ facilitate other developers to change my repo.  (e.g. add CSS)
 
-## Minimal setup
-Clone this repo.
+# Design Manifesto
 
-    git clone https://github.com/VincentTam/TestStaticmanLab.git <your-site-name>
-    
-Remove existing comments under the folder `_data` and the public domain license in file `LICENSE`.
-Then modify the following fields in the Jekyll config file `_config.yml`.
+![alt text](https://i.imgur.com/AF00Ia9.jpg "Cohere pledge print out")
 
-```yml
-# Site settings
-title: Your title
-subtitle: Optional subtitle
-url: "https://<username>.github.io/<repo>/"
+### First Things First
 
-staticman:
-  api: "https://staticman3.herokuapp.com/v3/entry/github/<username>/<repo>/<branchname>/<propertyname>"
-  path: "_data/comments/test-slug"
-```
-I hardcoded `test-slug` in `_config.yml`, `index.html` and `_includes/comments.html`.  The property name defaults to `comments`.
+We, the undersigned, are architects, engineers, builders, artists, graphic designers, visual communicators, and students working in a world in which the techniques and apparatus of design have persistently been presented to us as the most lucrative, effective and desirable means of using our talents. We have been bombarded with publications devoted to this belief, applauding the work of those who have flogged their skill and imagination to push design that brings no lasting benefit to society.
 
-By default, comments are sent to the GitHub repo as pull requests because of the `moderation` parameter in `staticman.yml`.
+### Things Such As:
 
-```yml
-  moderation: true
-```
+Design that regurgitates and doesn't innovate, projects that push profits and not creativity, and buildings that occupy space without improving or reinventing it. By far the most impactful design should be used to improve the well-being of our communities.
 
-Changing it to `false` will enable automatic merge.
+We think that there are more worthwhile concepts to spend our valuable skill and time on. Unprecedented environmental, social, and cultural crises demand our attention now. Projects that protect the environment, improve health and wellness, reform education, and empower communities.
 
-Finally, make your Git repo available on GitHub and invite **@staticmanlab** as a collaborator.
-Enter the URL
+We do not advocate the abolition of high-pressure consumer design: this is not feasible. Nor do we want to take any of the fun out of life. But we are proposing a reversal of priorities in favor of the more useful and more lasting forms of communication.
 
-    https://staticman3.herokuapp.com/v3/connect/github/<username>/<repo>
-    
-so that **@staticmanlab** can accept your invitation and start delivering comments to your site.
+We hope that our society will tire of vapid, inaccessible design trends; working for corporations that damage the environment and human beings, and that the prior call on our skills will be for worthwhile purposes.
 
-## Minimal site infrastructure
-The source code for this Jekyll site is made up of six pieces.
-The infrastructure follows [Popcorn](http://popcorn.staticman.net/), Staticman's official demo.
+With this in mind, we propose to share our experience and opinions and to make them available to colleagues, students and others who may be interested.
 
-1. Homepage: `index.html`
-  - contain the HTML form (copied from [Staticman's guide](https://staticman.net/docs/))
-  which sends a POST request to the `api` specified in `_config.yml`.
-  - outsource HTML code for comment display to `_includes/comments.html`
-  so as to allow reader's to focus on the HTML form, which is the _main_ focus of this project
-  - outsource wrapping HTML code to `_layouts/default.html`
-2. Generated comments: `_data/<propertyname>/<slug>/entry-<timestamp>.yml`
-  - store static site comments as Jekyll site data
-  - file/path creation is handled by Staticman's API
-3. Comment renderer: `_includes/comments.html`
-  - Retrieve Jekyll site data
-  - Wrap each field with suitable HTML tag and class(es)
-4. Staticman config file: `staticman.yml`
-  - root-level file, keep the file name
-  - contain configurations for comment _delivery_ to the GitHub repo
-  - only responsible for logical side
-    + e.g. generate the MD5 hash of commentator's email
-    + _not_ responsible for comment display/site layout
-5. Jekyll config file: `_config.yml`
-  - Present in _every_ static site generator under a similar name and format
-  - Store site config parameters so as to facilitate site setup by avoiding hardcoding.  Some important parameters include
-    + `title`: site name
-    + `staticman.api`: hook up the HTML form with Staticman's API server's "/entry" endpoint
-6. Page layout: `_layouts/default.html`
-  - contain necessary HTML code that wraps the form
-  - display the site title and the optional subtitle supplied in `_config.yml`
-  - add license
-  - link to [W3C's HTML validator](https://validator.w3.org/) for _HTML validation in two clicks_.
+We ask you to join us in breaking the record number of signatures and helping make Philadelphia the epicenter for design with purpose.
+
+[Sign the pledge]()
+
+
+# Setup
+
++ Clone the repo
++ Install [Jekyll](https://jekyllrb.com/)
++ Run `jekyll serve`
+
+# Credits
+
++ Built with [Jekyll](https://jekyllrb.com/) static site generator
++ Handles user submissions over git using [Staticman](https://staticman.net/)
++ Based on [template by Vincent Tam](https://github.com/VincentTam/TestStaticmanLab)
