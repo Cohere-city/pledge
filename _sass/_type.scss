@@ -29,13 +29,10 @@ h1 {
     line-height: 1.125em;
     @include query ($sm-width) {
         font-size: 5.75em;
-        line-height: 1.25em;
+        line-height: 1.125em;
     }
     @include query ($md-width) {
-        font-size: 5.625em;
-    }
-    @include query ($lg-width) {
-        font-size: 6em;
+        font-size: 5em;
     }
 }
 

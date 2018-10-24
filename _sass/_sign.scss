@@ -68,8 +68,21 @@
     &-print {
         background-color: $white;
 
+        &-past {
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 100%; height: 6px;
+                top: calc(50% - 3px); left: 0;
+                background-color: red;
+            }
+        }
         h4 {
-            margin: $spacing*2 0;
+            display: inline-block;
+            margin: $spacing 0;
+            font-size: 5vw;
             a {
                 color: $black;
                 text-decoration: none;
