@@ -74,9 +74,14 @@
             &:before {
                 content: '';
                 position: absolute;
-                width: 100%; height: 6px;
-                top: calc(50% - 3px); left: 0;
-                background-color: red;
+                width: 100%; height: 2px;
+                top: calc(50% - 1px); left: 0;
+                background-color: $red;
+
+                @include query($md-width) {
+                    height: 6px;
+                    top: calc(50% - 3px);
+                }
             }
         }
         h4 {
@@ -164,15 +169,22 @@ input[type=text] ~ span{
     top: 2.5em;
     font-size: 1em;
 
+    @include query($md-width) {
+        top: 1.5em;
+        font-size: 2rem;
+    }
     @include query($lg-width) {
         top: 1.75em;
         font-size: 4rem;
     }
 }
 input[type=url] ~ span{
-    @include query($lg-width) {
+    @include query($md-width) {
         top: 3.875em;
         font-size: 1rem;
+    }
+    @include query($lg-width) {
+        top: 3.875em;
     }
 }
 

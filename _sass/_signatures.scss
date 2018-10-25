@@ -8,7 +8,7 @@
     
     @include query($lg-width) {
         position: absolute;
-        top: 100vh;
+        top: 200vh;
     }
 
     h2 {
@@ -26,19 +26,23 @@
 
         a {
             text-decoration: none;
-            color: $grey;
+            color: #FFCDD2;
             transition: all 150ms ease-out;
 
             &:hover {
-                color: $black;
+                color: $red;
             }
 
             h3 {
                 position: relative;
                 display: inline-block;
                 margin-bottom: $spacing*2;
-                font-size: 2.25em;
+                font-size: 1.5em;
                 z-index: 0;
+
+                @include query ($sm-width) {
+                    font-size: 2.25em;
+                }
 
                 &:hover {
                     z-index: 100;
@@ -51,10 +55,10 @@
                 &:before {
                     content: '';
                     position: absolute;
-                    width: 0%; height: 50%;
-                    bottom: 0; left: 0;
-                    background-color: $grey;
-                    opacity: 0.5;
+                    width: 0%; height: 25%;
+                    bottom: 25%; left: 0;
+                    background-color: $black;
+                    opacity: 0.9;
                     transition: all 400ms 150ms $ease;
                     z-index: -1;
                 }
