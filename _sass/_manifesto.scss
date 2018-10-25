@@ -5,6 +5,9 @@
 }
 
 .manifesto {
+    &-body h1 {
+        margin: 0;
+    }
     &-quote {
         max-width: $sm-width;
         margin: $spacing*2 auto $spacing*4 auto;

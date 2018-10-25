@@ -13,7 +13,6 @@
 
 .sign.closed {
     visibility: hidden;
-    font-weight: 700;
 
     .sign-web {
         visibility: hidden;
@@ -47,7 +46,7 @@
     }
 
     > div {
-        padding: $spacing*2 $spacing;
+        padding: $spacing;
 
         @include query ($md-width) {
             width: 50%;

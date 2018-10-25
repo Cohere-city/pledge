@@ -44,18 +44,15 @@ ScrollReveal().reveal('.comment-name', {
 
 })
 
-ScrollReveal().reveal('.manifesto-logo', {
-    delay: 200,
-})
-
 ScrollReveal().reveal('.manifesto-body h1', {
-    delay: 600,
+    delay: 200,
+    interval: 300,
 })
 
 ScrollReveal().reveal('.manifesto-body p', {
-    delay: 300,
+    delay: 1200,
+    interval: 300,
     distance: '30px',
-    duration: 800
 })
 
 ScrollReveal().reveal('.manifesto-quote', {
