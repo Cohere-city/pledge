@@ -1,7 +1,7 @@
 // OVERLAY
-let openSign = document.getElementById('openSign')
-let closeSign = document.getElementById('closeSign')
-let overlay = document.querySelectorAll('#overlay')
+const openSign = document.getElementById('openSign')
+const closeSign = document.getElementById('closeSign')
+const overlay = document.querySelectorAll('#overlay')
 
 openSign.onclick = function () {
     for (let x of overlay) {
@@ -16,10 +16,10 @@ closeSign.onclick = function () {
 
 
 // PARALLAX
-var manifesto = document.querySelector('.manifesto');
+const manifesto = document.querySelector('.manifesto');
 
 function setParallax(yPos, el) {
-    el.style.transform = `translateY(${yPos}px)`;
+    //el.style.transform = `translateY(${yPos}px)`;
 }
 
 window.addEventListener("DOMContentLoaded", scrollLoop, false)
@@ -40,27 +40,5 @@ function scrollLoop() {
 // SCROLL ANIMATIONS
 
 ScrollReveal().reveal('.comment-name', {
-    interval: 100,
-
-})
-
-ScrollReveal().reveal('.manifesto-body h1', {
-    delay: 200,
-    interval: 300,
-})
-
-ScrollReveal().reveal('.manifesto-body p', {
-    delay: 1200,
-    interval: 300,
-    distance: '30px',
-})
-
-ScrollReveal().reveal('.manifesto-quote', {
-    delay: 1000,
-    distance: '60px'
-})
-
-ScrollReveal().reveal('.manifesto-meta', {
-    delay: 600,
-    duration: 1000
+    interval: 100
 })

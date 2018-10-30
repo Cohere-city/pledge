@@ -16,10 +16,16 @@
 }
 
 // HEADER
-.header {
+.nav {
+    position: fixed;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    top: 0;
     margin: $spacing auto 0 auto !important;
+    box-sizing: border-box;
+    transform: translateY(-80px);
+    animation: show-nav 600ms 3.6s $ease forwards;
     
     &-link {
         color: $black;
@@ -44,6 +50,15 @@
     }
 }
 
+@keyframes show-nav {
+    0% {
+        transform: translateY(-80px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 #closeSign {
     color: $white;
 
@@ -61,6 +76,18 @@
     font-weight: 700;
     border-bottom: 3px solid $black;
     cursor: pointer;
+}
+
+// General Animation
+@keyframes slide-in {
+    from {
+        transform: translateY($spacing);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 // Scrollreveal utility

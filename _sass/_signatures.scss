@@ -1,24 +1,15 @@
 .sig {
     position: relative;
-    top: 700px;
-
-    @include query($md-width) {
-        top: 600px;
-    }
-    
-    @include query($lg-width) {
-        position: absolute;
-        top: 200vh;
-    }
 
     h2 {
-        display: inline-block;
+        display: block;
         margin-bottom: $spacing*2;
         font-weight: 700;
         border-bottom: 3px solid $black;
         line-height: 2em;
     }
     &-item {
+        display: inline;
 
         &:hover {
             opacity: 1;
@@ -26,17 +17,16 @@
 
         a {
             text-decoration: none;
-            color: #FFCDD2;
+            color: $grey;
             transition: all 150ms ease-out;
 
             &:hover {
-                color: $red;
+                color: $black;
             }
 
             h3 {
                 position: relative;
-                display: inline-block;
-                margin-bottom: $spacing*2;
+                display: inline;
                 font-size: 1.5em;
                 z-index: 0;
 
@@ -44,18 +34,22 @@
                     font-size: 2.25em;
                 }
 
+                &:after {
+                    content: ', ';
+                }
+
                 &:hover {
                     z-index: 100;
 
                     &:before {
-                        width: 100%;
+                        width: calc(100% - 0.75em);
                     }
                 }
 
                 &:before {
                     content: '';
                     position: absolute;
-                    width: 0%; height: 25%;
+                    width: 0%; height: 3px;
                     bottom: 25%; left: 0;
                     background-color: $black;
                     opacity: 0.9;
