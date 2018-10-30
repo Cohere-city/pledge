@@ -16,23 +16,23 @@ closeSign.onclick = function () {
 
 
 // PARALLAX
-const manifesto = document.querySelector('.manifesto');
+const media = document.querySelector('.header-media');
 
 function setParallax(yPos, el) {
-    //el.style.transform = `translateY(${yPos}px)`;
+    el.style.transform = `translateY(${yPos}px)`;
+    console.log(yPos)
 }
 
 window.addEventListener("DOMContentLoaded", scrollLoop, false)
 
 function scrollLoop() {
-    var elem = document.querySelector('.manifesto-body')
     var distanceScrolled = document.body.scrollTop
-    var elemRect = elem.getBoundingClientRect()
+    var elemRect = media.getBoundingClientRect()
     var elemViewportOffset = elemRect.top
 
     var totalOffset = Math.floor(distanceScrolled + elemViewportOffset)
 
-    setParallax(totalOffset * -0.2, manifesto)
+    setParallax(totalOffset * -0.2, media)
 
     requestAnimationFrame(scrollLoop)
 }
