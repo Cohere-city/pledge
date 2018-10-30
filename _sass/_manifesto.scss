@@ -6,9 +6,9 @@
         width: 0%; height: 35vw;
         top: 0; right: 0;
         opacity: 0.75;
-        background-image: url('/assets/img/philadelphia.jpg');
+        background-image: url('assets/img/philadelphia.jpg');
         background-size: cover;
-        background-position: center center;
+        background-position: 0% center;
         animation: image-in 600ms 3s $ease forwards;
     }
 }
@@ -16,9 +16,11 @@
 @keyframes image-in {
     0% {
         width: 0%;
+        background-position: 0% center;
     }
     100% {
         width: 50%;
+        background-position: 100% center;
     }
 }
 
