@@ -1,23 +1,29 @@
 <div class="container">
   <div class="sig content">
     <h2>I pledge:</h2>
-
-    {% assign comments = site.data.comments.test-slug | sort %}
-    {% for comment in comments %}
-      {% assign commentData = comment[1] %}
-      {% assign mod3 = forloop.index | modulo: 4 %}
-      <article class="sig-item">
-        {% if commentData.link %}
-        <a href="{{ commentData.link }}" target="_blank">
-        {% endif %}
-          {% if mod3 == 0 %}<h3 class="comment-name sig-print">{{ commentData.name }}</h3>{% endif %}
-          {% if mod3 == 1 %}<h3 class="comment-name sig-script">{{ commentData.name }}</h3>{% endif %}
-          {% if mod3 == 2 %}<h3 class="comment-name sig-child">{{ commentData.name }}</h3>{% endif %}
-          {% if mod3 == 3 %}<h3 class="comment-name sig-classic">{{ commentData.name }}</h3>{% endif %}
-        {% if commentData.link %}
-        </a>
-        {% endif %}
-      </article>
-    {% endfor %}
+    <div class="sig-list">
+      {% assign comments = site.data.comments.test-slug | sort %}
+      {% assign i = 0 %}
+      {% for comment in comments %}
+        {% assign commentData = comment[1] %}
+        {% assign mod3 = forloop.index | modulo: 4 %}
+        <article class="sig-list-item">
+          {% if commentData.link %}
+          <a href="{{ commentData.link }}" target="_blank">
+          {% endif %}
+            {% if mod3 == 0 %}<h3 class="comment-name sig-print">{{ commentData.name }}</h3>{% endif %}
+            {% if mod3 == 1 %}<h3 class="comment-name sig-script">{{ commentData.name }}</h3>{% endif %}
+            {% if mod3 == 2 %}<h3 class="comment-name sig-child">{{ commentData.name }}</h3>{% endif %}
+            {% if mod3 == 3 %}<h3 class="comment-name sig-classic">{{ commentData.name }}</h3>{% endif %}
+          {% if commentData.link %}
+          </a>
+          {% endif %}
+        </article>
+        {% assign i = i | plus:1 %}
+      {% endfor %}
+    </div>
+    <div class="sig-count">
+      <h2>{{i}}</h2>
+    </div>
   </div>
 </div>

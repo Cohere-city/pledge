@@ -97,3 +97,14 @@
 html.sr .load-hidden {
     visibility: hidden;
 }
+
+.graphic-text {
+    position: absolute;
+    top: 150vh;
+    z-index: -100;
+    h1 {
+        color: lighten($black, 85%);
+        font-size: 12em;
+        white-space: nowrap;
+    }
+}

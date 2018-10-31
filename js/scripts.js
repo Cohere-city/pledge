@@ -15,12 +15,21 @@ closeSign.onclick = function () {
 }
 
 
+// WARP IMAGE
+const svg = document.getElementById('svg-element')
+const warp = new Warp(svg)
+
+warp.interpolate(4)
+warp.transform(([ x, y ]) => [ x, y + 4 * Math.sin(x / 16) ])
+
+
 // PARALLAX
 const media = document.querySelector('.header-media');
-
+const graphicText = document.querySelector('.graphic-text');
 function setParallax(yPos, el) {
+    let xPos = - yPos/2 + 100
     el.style.transform = `translateY(${yPos}px)`;
-    console.log(yPos)
+    graphicText.style.transform = `translateY(${yPos * 2}px) translateX(${xPos}vw)`;
 }
 
 window.addEventListener("DOMContentLoaded", scrollLoop, false)
@@ -38,6 +47,37 @@ function scrollLoop() {
 }
 
 // SCROLL ANIMATIONS
+ScrollReveal().watch = function (target, onEnter, onExit) {
+
+    onExit = onExit || function () {}
+
+    if (typeof onEnter === 'function' && typeof onExit === 'function') {
+        var noEffect = {
+            delay:    0,
+            distance: 0,
+            duration: 0,
+            scale:    1,
+            opacity:  null,
+            rotate:   { x: 0, y: 0, z: 0, },
+
+            reset: true,
+            beforeReset: onExit,
+            beforeReveal: onEnter,
+        }
+        this.reveal(target, noEffect)
+    } else {
+        throw new Error('Watch received invalid arguments.')
+    }
+}
+
+ScrollReveal().watch('.manifesto-body span',
+    function onEnter (el) {
+        el.classList.add('active')
+    },
+    function onExit (el) {
+        el.classList.remove('active')
+    }
+)
 
 ScrollReveal().reveal('.comment-name', {
     interval: 100
