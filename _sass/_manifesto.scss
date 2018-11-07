@@ -104,6 +104,14 @@
     }
 }
 
+.distort {
+    width: 100%;
+
+    &-item {
+        width: 100%;
+    }
+}
+
 .manifesto {
     transform: translateY($spacing);
     opacity: 0;
@@ -114,7 +122,7 @@
             span {
                 display: inline;
                 position: relative;
-                background-image: linear-gradient(to left, $black, $white);
+                background-image: linear-gradient(to left, $black, $black);
                 background-position: 0% 100%;
                 background-repeat: no-repeat;
                 background-size: 0px 100%;

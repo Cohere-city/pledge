@@ -1,6 +1,7 @@
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+.site {
+    position: relative;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
 }
 
 .container {
@@ -107,6 +108,7 @@ html.sr .load-hidden {
     position: absolute;
     top: 150vh;
     z-index: -100;
+    overflow: hidden;
     h1 {
         color: lighten($black, 85%);
         font-size: 12em;

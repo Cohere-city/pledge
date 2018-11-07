@@ -2,7 +2,6 @@
 const openSign = document.getElementById('openSign')
 const closeSign = document.getElementById('closeSign')
 const overlay = document.querySelectorAll('#overlay')
-
 openSign.onclick = function () {
     for (let x of overlay) {
         x.classList.toggle('closed')
@@ -14,20 +13,10 @@ closeSign.onclick = function () {
     }
 }
 
-
-// WARP IMAGE
-const svg = document.getElementById('svg-element')
-const warp = new Warp(svg)
-
-warp.interpolate(4)
-warp.transform(([ x, y ]) => [ x, y + 4 * Math.sin(x / 16) ])
-
-
 // PARALLAX
 const media = document.querySelector('.header-media');
 const graphicText = document.querySelector('.graphic-text');
-function setParallax(yPos, el) {
-    let xPos = - yPos/2 + 100
+function setParallax(yPos, xPos, el) {
     el.style.transform = `translateY(${yPos}px)`;
     graphicText.style.transform = `translateY(${yPos * 2}px) translateX(${xPos}vw)`;
 }
@@ -35,13 +24,11 @@ function setParallax(yPos, el) {
 window.addEventListener("DOMContentLoaded", scrollLoop, false)
 
 function scrollLoop() {
-    var distanceScrolled = document.body.scrollTop
-    var elemRect = media.getBoundingClientRect()
-    var elemViewportOffset = elemRect.top
+    let elemRect = media.getBoundingClientRect()
+    let elemViewportOffset = elemRect.top
 
-    var totalOffset = Math.floor(distanceScrolled + elemViewportOffset)
-
-    setParallax(totalOffset * -0.2, media)
+    let totalOffset = Math.floor(elemViewportOffset)
+    setParallax(totalOffset * -0.2, totalOffset * 0.3 / 2 + 150, media)
 
     requestAnimationFrame(scrollLoop)
 }
