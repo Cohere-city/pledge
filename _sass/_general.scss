@@ -37,10 +37,10 @@
     &-link {
         padding: 5px 5px 0px 5px;
         color: $black;
+        text-shadow: 2px 2px #fff;
         text-decoration: none;
         font-size: 0.625em;
         font-weight: 700;
-        background-color: rgba(255, 255, 255, 0.75);
         cursor: pointer;
         transition: all 300ms $ease;
 
@@ -69,18 +69,12 @@
 }
 
 #closeSign {
-    color: $white;
-
-    @include query($md-width) {
-        color: $black;
-    }
-}
-
-#closeSign {
-    position: absolute;
+    position: fixed;
     top: $spacing;
     right: $spacing;
     padding: 0 0 8px 0;
+    color: $black;
+    text-shadow: 2px 2px #fff;
     font-size: 0.625em;
     font-weight: 700;
     border-bottom: 3px solid $black;
@@ -104,13 +98,16 @@ html.sr .load-hidden {
     visibility: hidden;
 }
 
-.graphic-text {
+.graphic-text__wrap {
     position: absolute;
-    top: 150vh;
+    top: 100vh;
     z-index: -100;
-    overflow: hidden;
+}
+.graphic-text {
+    position: fixed;
     h1 {
-        color: lighten($black, 85%);
+        text-shadow: 20px 20px lighten($black, 85%);
+        color: #fff;
         font-size: 12em;
         white-space: nowrap;
     }

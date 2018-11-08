@@ -1,3 +1,9 @@
+// SUBMIT TWO FORMS
+let submitForms = function () {
+    document.getElementById("sign").submit();
+    document.getElementById("email").submit();
+}
+
 // OVERLAY
 const openSign = document.getElementById('openSign')
 const closeSign = document.getElementById('closeSign')
@@ -14,23 +20,26 @@ closeSign.onclick = function () {
 }
 
 // PARALLAX
-const media = document.querySelector('.header-media');
+//const media = document.querySelector('.header-media');
+const graphicTextWrap = document.querySelector('.graphic-text__wrap');
 const graphicText = document.querySelector('.graphic-text');
 function setParallax(yPos, xPos, el) {
-    el.style.transform = `translateY(${yPos}px)`;
-    graphicText.style.transform = `translateY(${yPos * 2}px) translateX(${xPos}vw)`;
+    el.style.transform = `translateY(${yPos}px) translateX(${xPos}px)`;
 }
 
 window.addEventListener("DOMContentLoaded", scrollLoop, false)
 
 function scrollLoop() {
-    let elemRect = media.getBoundingClientRect()
-    let elemViewportOffset = elemRect.top
+    let wrapRect = graphicTextWrap.getBoundingClientRect();
+    let elemRect = graphicText.getBoundingClientRect();
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    
+    let totalOffset = Math.floor((wrapRect.top / -(elemRect.width/h*1.5)) - h/1.33);
+    let totalDist = wrapRect.top*2 - h + w;
+    setParallax(totalOffset, totalDist, graphicText);
 
-    let totalOffset = Math.floor(elemViewportOffset)
-    setParallax(totalOffset * -0.2, totalOffset * 0.3 / 2 + 150, media)
-
-    requestAnimationFrame(scrollLoop)
+    requestAnimationFrame(scrollLoop);
 }
 
 // SCROLL ANIMATIONS

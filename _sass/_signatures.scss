@@ -23,7 +23,7 @@
                 opacity: 1;
             }
 
-            a {
+            //a {
                 display: inline-block;
                 margin-bottom: $spacing*2;
                 text-decoration: none;
@@ -63,7 +63,7 @@
                         z-index: -1;
                     }
                 }
-            }
+            //}
         }
     }
     &-count {
