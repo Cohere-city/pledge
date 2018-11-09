@@ -1,8 +1,7 @@
 // SUBMIT SIGNATURE
 $('.js-form').submit(function () {
-    //var form = this;
 
-    //$(form).addClass('form--loading');
+    $('.sign__wrap').addClass('form-loading');
 
     $.ajax({
       type: $(this).attr('method'),
@@ -10,15 +9,15 @@ $('.js-form').submit(function () {
       data: $(this).serialize(),
       contentType: 'application/x-www-form-urlencoded',
       success: function (data) {
-        console.log('success');
+        $('.sign__wrap').addClass('closed');
         document.getElementById("mce-email").submit();
         //showModal('Review submitted', 'Thanks for your review! It will show on the site once it has been approved. You can see the pull request <a href="https://github.com/eduardoboucas/popcorn/pulls">here</a>.');
-        //$(form).removeClass('form--loading');
+        $('.sign__wrap').removeClass('form-loading');
       },
       error: function (err) {
         console.log(err);
         //showModal('Error', 'Sorry, there was an error with the submission!');
-        //$(form).removeClass('form--loading');
+        $('.sign__wrap').removeClass('form--loading');
       }
     });
 
