@@ -1,6 +1,6 @@
 // SUBMIT SIGNATURE
 $('.js-form').submit(function () {
-    var form = this;
+    //var form = this;
 
     //$(form).addClass('form--loading');
 
@@ -10,7 +10,7 @@ $('.js-form').submit(function () {
       data: $(this).serialize(),
       contentType: 'application/x-www-form-urlencoded',
       success: function (data) {
-        console.log('success - ' + data);
+        console.log('success');
         //showModal('Review submitted', 'Thanks for your review! It will show on the site once it has been approved. You can see the pull request <a href="https://github.com/eduardoboucas/popcorn/pulls">here</a>.');
         //$(form).removeClass('form--loading');
       },
