@@ -177,7 +177,7 @@ input[type=text] ~ span{
         font-size: 2rem;
     }
     @include query($lg-width) {
-        top: 1.75em;
+        top: 1.625em;
         font-size: 4rem;
     }
 }
