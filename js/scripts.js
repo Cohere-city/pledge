@@ -11,6 +11,7 @@ $('.js-form').submit(function () {
       contentType: 'application/x-www-form-urlencoded',
       success: function (data) {
         console.log('success');
+        document.getElementById("mce-email").submit();
         //showModal('Review submitted', 'Thanks for your review! It will show on the site once it has been approved. You can see the pull request <a href="https://github.com/eduardoboucas/popcorn/pulls">here</a>.');
         //$(form).removeClass('form--loading');
       },
