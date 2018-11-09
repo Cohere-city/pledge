@@ -50,16 +50,16 @@
 .sign {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: space-between;
+    justify-content: flex-end;
     min-height: 100vh;
-    background-color: $white;
+    background-color: $black;
 
     > div {
         padding: $spacing;
         box-sizing: border-box;
 
         h2 {
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
     }
 
@@ -107,6 +107,7 @@
 
 // FORM
 form {
+    padding-bottom: $spacing;
 
     input {
         display: block;
@@ -128,22 +129,28 @@ form {
             font-size: 6rem;
         }
     }
-    input[type=url], input[type=email] {
-        margin: $spacing 0;
+    input[type=email] {
+        margin: $spacing 0 0 0;
 
         @include query($md-width) {
-            margin: $spacing * 1.5 0 0 0;
+            margin: $spacing 0 0 0;
         }
     }
-    input[type=submit] {
+    .form-submit {
         width: auto;
+        margin-top: $spacing;
         padding: $spacing/2 $spacing;
         background-color: $grey;
         color: $black;
         font-size: 1.25em;
+        transition: all 300ms $ease;
 
         @include query($md-width) {
             margin: $spacing 0;
+        }
+
+        &:hover {
+            background-color: lighten($grey, 15%);
         }
     }
 }
@@ -181,13 +188,13 @@ input[type=text] ~ span{
         font-size: 4rem;
     }
 }
-input[type=url] ~ span, input[type=email] ~ span{
+input[type=email] ~ span{
     @include query($md-width) {
         top: 3.875em;
         font-size: 1rem;
     }
     @include query($lg-width) {
-        top: 3.875em;
+        top: 2.875em;
     }
 }
 
@@ -195,18 +202,16 @@ input:focus ~ span, input:valid ~ span{
     top:0em;
     font-size: 16px;
 }
-input[type=url]:focus ~ span, input[type=url]:valid ~ span, input[type=email]:valid ~ span{
-    top:0.5em;
+input[type=email]:focus ~ span, input[type=email]:valid ~ span{
+    top:0em;
     @include query($md-width) {
-        top:1em;
+        top:0em;
     }
 }
 
-input[type=url]:invalid ~ span, input[type=email]:invalid ~ span {
+input[type=email]:invalid ~ span {
     color: orange;
 }
-
-input[type=url]:valid ~ span, input[type=email]:valid ~ span {
-    top: 1em;
+input[type=email]:valid ~ span {
     color: white;
 }

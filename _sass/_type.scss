@@ -65,8 +65,15 @@ p {
 }
 
 small {
-    font-size: 0.375em;
+    display: inline-block;
+    margin: $spacing/2 0 0 0;
+    font-size: 0.625em;
     letter-spacing: 0.0375em;
+    line-height: 1.75em; 
+
+    @include query ($md-width) {
+        font-size: 0.5em;
+    }
 }
 
 // Signatures
