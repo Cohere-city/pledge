@@ -29,12 +29,17 @@ $('.js-form').submit(function () {
 const openSign = document.getElementById('openSign')
 const closeSign = document.getElementById('closeSign')
 const overlay = document.querySelectorAll('#overlay')
+
+document.getElementById('openSignBottom').onclick = function () {
+    toggleOverlay()
+}
 openSign.onclick = function () {
-    for (let x of overlay) {
-        x.classList.toggle('closed')
-    }
+    toggleOverlay()
 }
 closeSign.onclick = function () {
+    toggleOverlay()
+}
+function toggleOverlay() {
     for (let x of overlay) {
         x.classList.toggle('closed')
     }
