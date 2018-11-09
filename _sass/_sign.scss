@@ -24,12 +24,12 @@
     .sign-web {
         visibility: hidden;
         opacity: 0.75;
-        transform: translateY(100%) scale(1, 0.8);
+        transform: translateY(-100%) scale(1, 0.8);
     }
     .sign-print {
         visibility: hidden;
         opacity: 0;
-        transform: translateY(-$spacing/2);
+        transform: translateY($spacing/2);
     }
     nav {
         opacity: 0;
@@ -79,8 +79,8 @@
 
 .sign {
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: flex-start;
     min-height: 100vh;
     //background-color: $black;
 
@@ -94,12 +94,13 @@
     }
 
     &-web {
-        min-height: calc(100vh - 100px);
+        min-height: 50vh; //calc(100vh - 100px)
         background-color: $black;
         color: $white;
     }
 
     &-print {
+        min-height: 50vh;
         padding-bottom: 100px !important;
         background-color: $white;
 
