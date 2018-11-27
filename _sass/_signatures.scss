@@ -4,10 +4,14 @@
     &:hover {
         h2 {
             color: $white;
+            padding-left: $spacing/2;
 
             &:before {
                 transform: scale(1, 1);
             }
+        }
+        .sig-count {
+            right: $spacing*1.5;
         }
     }
 
@@ -94,5 +98,6 @@
     &-count {
         position: absolute;
         top: 0; right: $spacing;
+        transition: right 300ms $ease;
     }
 }

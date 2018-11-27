@@ -142,6 +142,9 @@
 form {
     padding-bottom: $spacing;
 
+    label {
+        margin-bottom: $spacing/2;
+    }
     input {
         display: block;
         width: 100%;

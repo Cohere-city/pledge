@@ -1,28 +1,63 @@
 // SUBMIT SIGNATURE
-$('.js-form').submit(function () {
+// $('.js-form').submit(function () {
 
-    $('.sign__wrap').addClass('form-loading');
+//     $('.sign__wrap').addClass('form-loading');
 
+//     $.ajax({
+//       type: $(this).attr('method'),
+//       url: $(this).attr('action'),
+//       data: $(this).serialize(),
+//       contentType: 'application/x-www-form-urlencoded',
+//       success: function (data) {
+//         $('.sign__wrap').addClass('closed');
+//         document.getElementById("mce-email").submit();
+//         //showModal('Review submitted', 'Thanks for your review! It will show on the site once it has been approved. You can see the pull request <a href="https://github.com/eduardoboucas/popcorn/pulls">here</a>.');
+//         $('.sign__wrap').removeClass('form-loading');
+//       },
+//       error: function (err) {
+//         console.log(err);
+//         //showModal('Error', 'Sorry, there was an error with the submission!');
+//         $('.sign__wrap').removeClass('form--loading');
+//       }
+//     });
+
+//     return false;
+//   });
+$(".form-submit").submit(function(e){
+    e.preventDefault();
+    submitSubscribeForm($(".form-submit"));
+});
+
+function submitSubscribeForm($form, $resultElement) {
     $.ajax({
-      type: $(this).attr('method'),
-      url: $(this).attr('action'),
-      data: $(this).serialize(),
-      contentType: 'application/x-www-form-urlencoded',
-      success: function (data) {
-        $('.sign__wrap').addClass('closed');
-        document.getElementById("mce-email").submit();
-        //showModal('Review submitted', 'Thanks for your review! It will show on the site once it has been approved. You can see the pull request <a href="https://github.com/eduardoboucas/popcorn/pulls">here</a>.');
-        $('.sign__wrap').removeClass('form-loading');
-      },
-      error: function (err) {
-        console.log(err);
-        //showModal('Error', 'Sorry, there was an error with the submission!');
-        $('.sign__wrap').removeClass('form--loading');
-      }
-    });
+        type: "GET",
+        url: $form.attr("action"),
+        data: $form.serialize(),
+        cache: false,
+        dataType: "jsonp",
+        jsonp: "c",
+        contentType: "application/json; charset=utf-8",
 
-    return false;
-  });
+        error: function(err){
+            console.log(err);
+        },
+
+        success: function(data){
+            if (data.result != "success") {
+                var message = data.msg || "Sorry. Unable to subscribe. Please try again later.";
+
+                if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+                    message = "You're already subscribed. Thank you.";
+                }
+
+                $resultElement.html(message);
+
+            } else {
+                $resultElement.html("Thank you!<br>You must confirm the subscription in your inbox.");
+            }
+        }
+    });
+}
 
 
 // OVERLAY
