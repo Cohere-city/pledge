@@ -112,3 +112,22 @@ html.sr .load-hidden {
         white-space: nowrap;
     }
 }
+
+.success {
+    position: absolute;
+    width: 100%;
+    padding: $spacing 0;
+    text-align: center;
+    background-color: #4BB543;
+    color: lighten(#4BB543, 47%);
+    animation: hide 600ms 1800ms $ease forwards;
+}
+
+@keyframes hide {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
