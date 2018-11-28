@@ -23,47 +23,11 @@
 
 //     return false;
 //   });
-$(".form-submit").submit(function(e){
-    e.preventDefault();
-    submitSubscribeForm($(".form-submit"));
-});
-
-function submitSubscribeForm($form, $resultElement) {
-    $.ajax({
-        type: "GET",
-        url: $form.attr("action"),
-        data: $form.serialize(),
-        cache: false,
-        dataType: "jsonp",
-        jsonp: "c",
-        contentType: "application/json; charset=utf-8",
-
-        error: function(err){
-            console.log(err);
-        },
-
-        success: function(data){
-            if (data.result != "success") {
-                var message = data.msg || "Sorry. Unable to subscribe. Please try again later.";
-
-                if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
-                    message = "You're already subscribed. Thank you.";
-                }
-
-                $resultElement.html(message);
-
-            } else {
-                $resultElement.html("Thank you!<br>You must confirm the subscription in your inbox.");
-            }
-        }
-    });
-}
-
 
 // OVERLAY
-const openSign = document.getElementById('openSign')
-const closeSign = document.getElementById('closeSign')
-const overlay = document.querySelectorAll('#overlay')
+const openSign = document.getElementById('openSign');
+const closeSign = document.getElementById('closeSign');
+const overlay = document.querySelectorAll('#overlay');
 
 document.getElementById('openSignBottom').onclick = function () {
     toggleOverlay()
@@ -78,6 +42,12 @@ function toggleOverlay() {
     for (let x of overlay) {
         x.classList.toggle('closed')
     }
+}
+
+// Close form immediately if starts open
+const signOverlay = document.querySelector("#overlay");
+if (signOverlay.classList.contains("open")) {
+    setTimeout(function(){ toggleOverlay() }, 300);
 }
 
 // PARALLAX
